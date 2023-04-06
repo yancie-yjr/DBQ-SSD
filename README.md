@@ -135,12 +135,12 @@ Experiment results of different approaches on Waymo dataset (*validation* set):
 Experiment results of different approaches on ONCE dataset (*validation* set):
 <p align="center"> <img src="docs/imgs/once_val.jpg" width="95%"> </p>
 
-Visualization results of our IA-SSD on KITTI scene:
+Visualization results of our DBQ-SSD on KITTI scene:
 <p align="center"> <img src="docs/imgs/kitti1.jpg" width="90%"> </p>
 
-Visualization results of our IA-SSD on Waymo scene:
+Visualization results of our DBQ-SSD on Waymo scene:
 <p align="center"> <img src="docs/imgs/waymo1.jpg" width="90%"> </p>
-<p align="center"> <img src="docs/imgs/waymo1.jpg" width="90%"> </p>
+<p align="center"> <img src="docs/imgs/waymo2.jpg" width="90%"> </p>
 
 ## Citation 
 If you find this project useful in your research, please consider citing:
