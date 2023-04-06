@@ -87,8 +87,8 @@ We provide the pre-trained weight file so you can just run with that:
 cd tools 
 
 # To reduce the pressure on the CPU during preprocessing, a suitable batchsize is recommended, e.g. 16. (Over 5 batches per second on RTX2080Ti)
-python test.py --cfg_file tools/cfgs/kitti_models/DBQ-SSD.yaml --batch_size 16 \
-    --ckpt IA-SSD.pth --set MODEL.POST_PROCESSING.RECALL_MODE 'speed' 
+OMP_NUM_THREADS=1 python test.py --cfg_file tools/cfgs/kitti_models/DBQ-SSD.yaml --batch_size 16 --workers 8 \
+    --ckpt DBQ-SSD.pth --set MODEL.POST_PROCESSING.RECALL_MODE 'speed' 
 ```
 
 
