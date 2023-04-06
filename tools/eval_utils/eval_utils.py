@@ -81,8 +81,7 @@ def eval_one_epoch(cfg, model, dataloader, epoch_id, logger, dist_test=False, sa
         metric = common_utils.merge_results_dist([metric], world_size, tmpdir=result_dir / 'tmpdir')
 
     logger.info('*************** Performance of EPOCH %s *****************' % epoch_id)
-    # sec_per_example = (time.time() - start_time) / len(dataloader.dataset)
-    sec_per_example = sum(eval_periods) / len(dataloader.dataset)
+    sec_per_example = sum(eval_periods[100:]) / (len(dataloader.dataset) - 100)
     logger.info('Generate label finished(sec_per_example: %.4f second).' % sec_per_example)
 
     if cfg.LOCAL_RANK != 0:
