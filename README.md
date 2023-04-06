@@ -87,7 +87,7 @@ We provide the pre-trained weight file so you can just run with that:
 cd tools 
 
 # To reduce the pressure on the CPU during preprocessing, a suitable batchsize is recommended, e.g. 16. (Over 5 batches per second on RTX2080Ti)
-OMP_NUM_THREADS=1 python test.py --cfg_file tools/cfgs/kitti_models/DBQ-SSD.yaml --batch_size 16 --workers 8 \
+OMP_NUM_THREADS=1 python tools/test.py --cfg_file tools/cfgs/kitti_models/DBQ-SSD.yaml --batch_size 16 --workers 8 \
     --ckpt DBQ-SSD.pth --set MODEL.POST_PROCESSING.RECALL_MODE 'speed' 
 ```
 
@@ -99,7 +99,7 @@ The configuration files are in ```tools/cfgs/kitti_models/DBQ-SSD.yaml```, and t
 
 Train with single or multiple GPUs: (e.g., KITTI dataset)
 ```shell
-python train.py --cfg_file tools/cfgs/kitti_models/DBQ-SSD.yaml
+python tools/train.py --cfg_file tools/cfgs/kitti_models/DBQ-SSD.yaml
 
 # or 
 
@@ -111,11 +111,11 @@ sh tools/scripts/dist_train.sh ${NUM_GPUS} --cfg_file tools/cfgs/kitti_models/DB
 
 Evaluate with single or multiple GPUs: (e.g., KITTI dataset)
 ```shell
-python test.py --cfg_file tools/cfgs/kitti_models/DBQ-SSD.yaml  --batch_size ${BATCH_SIZE} --ckpt ${PTH_FILE}
+python tools/test.py --cfg_file tools/cfgs/kitti_models/DBQ-SSD.yaml  --batch_size ${BATCH_SIZE} --ckpt ${PTH_FILE}
 
 # or
 
-sh scripts/dist_test.sh ${NUM_GPUS} \
+sh tools/scripts/dist_test.sh ${NUM_GPUS} \
     --cfg_file tools/cfgs/kitti_models/DBQ-SSD.yaml --batch_size ${BATCH_SIZE} --ckpt ${PTH_FILE}
 ```
 
