@@ -123,7 +123,7 @@ MODEL:
     DYNAMIC:
         P: 1
         BUDGET: 0.0
-        SCALE: 0.5
+        SCALE: 0.1
 
 
 OPTIMIZATION:
